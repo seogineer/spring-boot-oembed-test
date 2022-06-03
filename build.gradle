@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.seogineer'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -29,6 +29,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.5.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.7.0'
 }
 
 test {

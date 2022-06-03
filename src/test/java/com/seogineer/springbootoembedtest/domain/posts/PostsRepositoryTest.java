@@ -1,4 +1,4 @@
-package com.seogineer.demospringwebservice.domain.posts;
+package com.seogineer.springbootoembedtest.domain.posts;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

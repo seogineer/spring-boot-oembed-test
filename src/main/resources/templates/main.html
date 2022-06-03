@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>스프링부트 웹서비스</title>
+    <title>oEmbed Test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,97 +9,16 @@
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
 </head>
 <body>
-    <h1>스프링부트로 시작하는 웹 서비스</h1>
-
-    <div class="col-md-12" style="text-align: right;">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
+    <p class="h1">oEmbed Test</p>
+    <div class="input-group mb-3">
+        <input id="address" type="text" class="form-control" aria-describedby="button-addon2" required>
+        <button class="btn btn-outline-secondary" type="button" id="submit">확인</button>
     </div>
 
-    <!-- 목록 출력 영역 -->
-    <table class="table table-horizontal table-bordered">
-        <thead class="thead-strong">
-        <tr>
-            <th>게시글번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>최종수정일</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        <tr th:each="post : ${posts}">
-            <td th:text="${post.id}"></td>
-            <td>
-                <a th:href="@{/posts(id=${post.id})}" th:text="${post.title}"></a>
-            </td>
-            <td th:text="${post.author}"></td>
-            <td th:text="${post.modifiedDate}"></td>
-        </tr>
-        </tbody>
-    </table>
+    <div>
+        <table id="resultTable" class="table">
 
-    <nav aria-label="Page navigation example" style="text-align: center;">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" th:href="@{/posts(page=1)}" aria-label="First">
-                    <span aria-hidden="true">First</span>
-                </a>
-            </li>
-
-            <li class="page-item" th:class="${posts.first} ? 'disabled'">
-                <a class="page-link" th:href="${posts.first} ? '#' : @{/posts(page=${posts.number})}" aria-label="Previous">
-                    <span aria-hidden="true">&lt;</span>
-                </a>
-            </li>
-
-            <li class="page-item" th:if="${posts.getTotalPages() != 0}" th:each="page: ${#numbers.sequence(1, posts.getTotalPages())}" th:class="${page == posts.number + 1} ? 'active'">
-                <a class="page-link" th:text="${page}" th:href="@{/posts(page=${page})}"></a>
-            </li>
-
-            <li class="page-item" th:class="${posts.last} ? 'disabled'">
-                <a class="page-link" th:href="${posts.last} ? '#' : @{/posts(page=${posts.number + 2})}" aria-label="Next">
-                    <span aria-hidden="true">&gt;</span>
-                </a>
-            </li>
-
-            <li class="page-item">
-                <a class="page-link" th:href="@{/posts(page=${posts.totalPages})}" aria-label="Last">
-                    <span aria-hidden="true">Last</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="savePostsLabel">게시글 등록</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="title">제목</label>
-                            <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
-                        </div>
-                        <div class="form-group">
-                            <label for="author"> 작성자 </label>
-                            <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
-                        </div>
-                        <div class="form-group">
-                            <label for="content"> 내용 </label>
-                            <textarea class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-                    <button type="button" class="btn btn-primary" id="btn-save">등록</button>
-                </div>
-            </div>
-        </div>
+        </table>
     </div>
 
     <!--부트스트랩 js, jquery 추가-->

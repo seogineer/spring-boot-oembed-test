@@ -1,4 +1,4 @@
-package com.seogineer.demospringwebservice.controller;
+package com.seogineer.springbootoembedtest.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

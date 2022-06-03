@@ -1,8 +1,8 @@
-package com.seogineer.demospringwebservice.service;
+package com.seogineer.springbootoembedtest.service;
 
-import com.seogineer.demospringwebservice.domain.posts.Posts;
-import com.seogineer.demospringwebservice.domain.posts.PostsRepository;
-import com.seogineer.demospringwebservice.dto.posts.PostsSaveRequestDto;
+import com.seogineer.springbootoembedtest.domain.posts.Posts;
+import com.seogineer.springbootoembedtest.domain.posts.PostsRepository;
+import com.seogineer.springbootoembedtest.dto.posts.PostsSaveRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
